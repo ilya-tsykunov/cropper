@@ -39,6 +39,9 @@ gem 'bootstrap-generators', '~> 3.3.4'
 gem 'devise'
 gem 'simple_form'
 gem 'haml-rails', '~> 0.9'
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

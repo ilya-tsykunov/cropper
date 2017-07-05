@@ -1,0 +1,13 @@
+.row
+  .col-xs-4
+    %h1 Editing event
+
+.row
+  .col-xs-4
+    = render 'form'
+
+.row
+  .col-xs-4
+    = link_to 'Show', @event
+    \|
+    = link_to 'Back', events_path

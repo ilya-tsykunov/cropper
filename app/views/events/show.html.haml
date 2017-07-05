@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Topic:
+  = @event.topic
+%p
+  %b Start date:
+  = formatted_date(@event.start_date)
+%p
+  %b End date:
+  = formatted_date(@event.end_date)
+%p
+  %b City:
+  = @event.city
+
+= link_to 'Edit', edit_event_path(@event)
+\|
+= link_to 'Back', events_path
