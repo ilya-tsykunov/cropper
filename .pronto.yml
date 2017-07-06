@@ -1,0 +1,11 @@
+all:
+  exclude: [
+            app/assets/stylesheets/nv/shared/_icons.scss,
+            app/assets/stylesheets/nv/parent/mobile/*,
+            vendor/assets/**/*,
+            bin/*,
+            db/schema.rb,
+            db/migrate/*
+           ]
+AllCops:
+  TargetRubyVersion: 2.3.1

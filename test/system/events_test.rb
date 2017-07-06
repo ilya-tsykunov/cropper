@@ -1,9 +1,9 @@
-require "application_system_test_case"
+require 'application_system_test_case'
 
 class EventsTest < ApplicationSystemTestCase
-  # test "visiting the index" do
+  # test 'visiting the index' do
   #   visit events_url
   #
-  #   assert_selector "h1", text: "Event"
+  #   assert_selector 'h1', text: 'Event'
   # end
 end
