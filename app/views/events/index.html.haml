@@ -9,6 +9,7 @@
           %th Start date
           %th End date
           %th City
+          %th Topics
           %th
           %th
           %th
@@ -20,6 +21,7 @@
             %td= formatted_date(event.start_date)
             %td= formatted_date(event.end_date)
             %td= event.city
+            %td= event_topics(event)
             %td= link_to 'Show', event
             %td= link_to 'Edit', edit_event_path(event)
             %td= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }

@@ -12,6 +12,9 @@
 %p
   %b City:
   = @event.city
+%p
+  %b Topics:
+  = event_topics(@event)
 
 = link_to 'Edit', edit_event_path(@event)
 \|

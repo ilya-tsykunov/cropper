@@ -7,6 +7,7 @@
           %li= msg
 
   = f.input :name, required: true
+  = f.input :city, required: true
   = f.input :start_date,
             as: :string,
             required: true,
@@ -15,6 +16,6 @@
             as: :string,
             required: true,
             input_html: { class: 'js-end-date', value: formatted_date(event.end_date) }
-  = f.input :city, required: true
+  = f.association :topics, as: :check_boxes, required: true
 
   = f.button :submit, class: 'btn btn-primary'
