@@ -1,8 +1,9 @@
 FactoryGirl.define do
-  factory :event do
-    name 'MyString'
-    start_date '2017-07-05 21:01:50'
-    end_date '2017-07-05 21:01:50'
-    city 'MyString'
+  factory Event do
+    name 'Event'
+    start_date '2017-07-05 21:01:00'
+    end_date '2017-07-05 21:02:00'
+    city 'City'
+    topics { [create(:topic)] }
   end
 end

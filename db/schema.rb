@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 20170708142903) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string "name"
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.string "city"
+    t.string "name", null: false
+    t.datetime "start_date", null: false
+    t.datetime "end_date", null: false
+    t.string "city", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

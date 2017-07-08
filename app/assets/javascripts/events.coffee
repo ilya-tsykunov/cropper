@@ -6,7 +6,6 @@ $ ->
   initDatepickers()
 
 initDatepickers = ->
-  console.log('EV PICKER');
   $startDate = $('.js-start-date')
   $endDate = $('.js-end-date')
 
@@ -18,7 +17,7 @@ initDatepickers = ->
     format : 'DD/MM/YYYY HH:mm'
 
   $startDate.on 'dp.change', (e)->
-    $endDate.data('DateTimePicker').minDate(e.date)
+    $endDate.data('DateTimePicker').minDate(e.date.add(1, 'm'))
 
   $endDate.on 'dp.change', (e)->
-    $startDate.data('DateTimePicker').maxDate(e.date)
+    $startDate.data('DateTimePicker').maxDate(e.date.subtract(1, 'm'))
