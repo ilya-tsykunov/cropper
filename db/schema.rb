@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170705180150) do
   enable_extension "hstore"
 
   create_table "events", force: :cascade do |t|
-    t.string "topic"
+    t.string "name"
     t.datetime "start_date"
     t.datetime "end_date"
     t.string "city"

@@ -5,7 +5,7 @@
     %table.table.table-striped.table-hover
       %thead
         %tr
-          %th Topic
+          %th Name
           %th Start date
           %th End date
           %th City
@@ -16,7 +16,7 @@
       %tbody
         - @events.each do |event|
           %tr
-            %td= event.topic
+            %td= event.name
             %td= formatted_date(event.start_date)
             %td= formatted_date(event.end_date)
             %td= event.city
