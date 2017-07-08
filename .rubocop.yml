@@ -31,11 +31,11 @@ Metrics/BlockLength:
 Style/Documentation:
   Enabled: false
 
-Style/EmptyLines:
+Layout/EmptyLines:
   Exclude:
     - 'config/environments/development.rb'
 
-Style/EmptyLinesAroundBlockBody:
+Layout/EmptyLinesAroundBlockBody:
   Exclude:
     - 'db/schema.rb'
 
@@ -43,7 +43,7 @@ Style/StringLiterals:
   Exclude:
     - 'db/schema.rb'
 
-Style/ExtraSpacing:
+Layout/ExtraSpacing:
   Exclude:
     - 'config/environments/development.rb'
 
@@ -59,13 +59,13 @@ Style/ClassAndModuleChildren:
   Exclude:
     - 'app/controllers/**/*.rb'
 
-Style/MultilineOperationIndentation:
+Layout/MultilineOperationIndentation:
   EnforcedStyle: indented
 
-Style/MultilineMethodCallIndentation:
+Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented_relative_to_receiver
 
-Style/AlignParameters:
+Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
 
 Style/ClassVars:
@@ -78,7 +78,7 @@ Lint/EndAlignment:
 Style/SafeNavigation:
   Enabled: false
 
-Style/AlignHash:
+Layout/AlignHash:
   EnforcedHashRocketStyle: key
   EnforcedColonStyle: key
   EnforcedLastArgumentHashStyle: always_inspect
@@ -92,7 +92,7 @@ Style/PercentLiteralDelimiters:
     '%i': '()'
     '%I': '()'
 
-Style/MultilineMethodCallIndentation:
+Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
 Style/NegatedIf:
