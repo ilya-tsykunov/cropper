@@ -5,4 +5,4 @@
 development:
   :concurrency: <%= ENV['RAILS_MAX_THREADS'] || 5 %>
 production:
-  :concurrency: <%= ENV['RAILS_MAX_THREADS'] || 20 %>
+  :concurrency: <%= ENV['RAILS_MAX_THREADS'] || 3 %>
