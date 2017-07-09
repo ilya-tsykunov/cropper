@@ -10,11 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708142903) do
+ActiveRecord::Schema.define(version: 20170709080646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
+
+  create_table "event_filters", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name", null: false
+    t.string "city"
+    t.datetime "start_date_begin"
+    t.datetime "start_date_end"
+    t.bigint "topic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["topic_id"], name: "index_event_filters_on_topic_id"
+    t.index ["user_id"], name: "index_event_filters_on_user_id"
+  end
 
   create_table "event_topics", force: :cascade do |t|
     t.bigint "event_id"

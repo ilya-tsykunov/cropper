@@ -1,0 +1,16 @@
+= simple_form_for carrier.event_filter do |f|
+  = f.input :city, collection: carrier.cities_collection
+  = f.input :start_date_begin,
+            as: :string,
+            input_html: { class: 'js-start-date', value: formatted_date(f.object.start_date_begin) }
+  = f.input :start_date_end,
+            as: :string,
+            input_html: { class: 'js-end-date', value: formatted_date(f.object.start_date_end) }
+  = f.association :topic, as: :select, collection: carrier.topics_collection
+
+  = link_to 'Search',
+            'javascript:void(0);',
+            class: 'btn btn-primary js-event-filter-btn',
+            data: { url: events_path }
+  = f.button :submit, 'Save filter', class: 'btn btn-default'
+  = link_to 'Clear filter', events_path

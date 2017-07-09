@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: %i(show edit update destroy)
 
   def index
-    @events = Event.all
+    @events_carrier = EventsCarrier.new(current_user, event_filter_params)
   end
 
   def show; end
@@ -50,5 +50,13 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:name, :start_date, :end_date, :city, topic_ids: [])
+  end
+
+  def event_filter_params
+    if params[:event_filter].present?
+      params.require(:event_filter).permit(:name, :start_date_begin, :start_date_end, :city, :topic_id)
+    else
+      {}
+    end
   end
 end

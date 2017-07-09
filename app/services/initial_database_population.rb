@@ -5,6 +5,7 @@ module InitialDatabasePopulation
     create_users
     create_topics
     create_events
+    create_event_filters
   end
 
   private
@@ -48,8 +49,29 @@ module InitialDatabasePopulation
       topics: [
         Topic.find_by(name: 'Organization'),
         Topic.find_by(name: 'Celebrities'),
-        Topic.create!(name: 'Advertisement')
+        Topic.find_by(name: 'Advertisement')
       ]
+    )
+  end
+
+  def create_event_filters
+    user = User.first
+    EventFilter.create!(
+      user: user,
+      name: 'New Year organization',
+      topic: Topic.find_by(name: 'Organization')
+    )
+    EventFilter.create!(
+      user: user,
+      name: 'Moscow events',
+      city: 'Moscow'
+    )
+    EventFilter.create!(
+      user: user,
+      name: 'London 2017',
+      city: 'London',
+      start_date_begin: DateTime.new(2017, 1, 1, 0, 0),
+      start_date_end: DateTime.new(2017, 12, 31, 23, 59)
     )
   end
 end

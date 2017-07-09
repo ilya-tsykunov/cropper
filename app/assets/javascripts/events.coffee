@@ -4,6 +4,7 @@
 
 $ ->
   initDatepickers()
+  initEventSearchButtonHandler()
 
 initDatepickers = ->
   $startDate = $('.js-start-date')
@@ -21,3 +22,9 @@ initDatepickers = ->
 
   $endDate.on 'dp.change', (e)->
     $startDate.data('DateTimePicker').maxDate(e.date.subtract(1, 'm'))
+
+initEventSearchButtonHandler = ->
+  $(document).on 'click', '.js-event-filter-btn', ->
+    $btn = $(@)
+    params = $btn.closest('form').serialize()
+    window.location = $btn.data('url') + '?' + params

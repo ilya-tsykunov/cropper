@@ -15,7 +15,7 @@
           %th
 
       %tbody
-        - @events.each do |event|
+        - @events_carrier.events.each do |event|
           %tr
             %td= event.name
             %td= formatted_date(event.start_date)
@@ -31,4 +31,21 @@
     = link_to 'New Event', new_event_path, class: 'btn btn-primary'
 
   .col-xs-4
-    %h3 Filters
+    .row
+      .col-xs-12
+        %h3 Filters
+        = render partial: 'event_filter', locals: { carrier: @events_carrier.event_filter_carrier }
+
+    %br
+
+    .row
+      .col-xs-12
+        %h4 Saved filters:
+        - @events_carrier.saved_event_filters.each do |event_filter|
+          %div
+            = link_to event_filter.name,
+                      events_path(@events_carrier.event_filter_filtering_params(event_filter))
+            = link_to event_filter do
+              %span.glyphicon.glyphicon-edit{ 'aria-hidden' => true }
+            = link_to event_filter, method: :delete, data: { confirm: 'Are you sure?' } do
+              %span.glyphicon.glyphicon-remove{ 'aria-hidden' => true }

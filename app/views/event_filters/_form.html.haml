@@ -1,0 +1,21 @@
+= simple_form_for carrier.event_filter do |f|
+  - if carrier.event_filter.errors.any?
+    #error-explanation
+      %h2 #{pluralize(carrier.event_filter.errors.count, 'error')} prohibited this event from being saved:
+      %ul
+        - carrier.event_filter.errors.full_messages.each do |msg|
+          %li= msg
+
+  = f.input :name, required: true
+  = f.input :city, collection: carrier.cities_collection
+  = f.input :start_date_begin,
+            as: :string,
+            input_html: { class: 'js-start-date',
+                          value: formatted_date(carrier.event_filter.start_date_begin) }
+  = f.input :start_date_end,
+            as: :string,
+            input_html: { class: 'js-end-date',
+                          value: formatted_date(carrier.event_filter.start_date_end) }
+  = f.association :topic, as: :select, collection: carrier.topics_collection
+
+  = f.button :submit, class: 'btn btn-primary'
