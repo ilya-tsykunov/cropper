@@ -1,0 +1,7 @@
+%h2 Hello, #{@user.name}!
+
+%p New event "#{@event.name}" is created!
+
+%p
+  You can see it by
+  = link_to 'this link', event_url(@event)
