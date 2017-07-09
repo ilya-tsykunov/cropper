@@ -6,7 +6,9 @@ class Event < ApplicationRecord
   validates :name, :city, :start_date, :end_date, :topics, presence: true
   validate :end_date_more_than_start_date
 
-  after_create :schedule_event_notification
+  # Disabled until production server is configured properly
+  #
+  # after_create :schedule_event_notification
 
   private
 
