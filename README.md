@@ -1,24 +1,9 @@
-# README
+Application for testing different things. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://like-cropper.herokuapp.com/
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can:
+1. Register
+2. Create events
+3. Create event filters
+4. Get notifications if new event matches one of your filters. Emails are sent to Mailtrap service.
